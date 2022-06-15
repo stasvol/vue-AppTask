@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col s6 offset-s3">
-     <h2>Create Task</h2>
+     <h2 class="head">Create Task</h2>
 
       <form @submit.prevent="onSubmit">
         <div class="input-field">
@@ -14,7 +14,7 @@
 
         <div class="input-field col s12">
           <textarea v-model="description" id="description" class="materialize-textarea"></textarea>
-          <label for="description">Textarea</label>
+          <label for="description">Description</label>
           <span class="character-counter" style="float: right; font-size: 12px;">{{ description.length }}/2048</span>
         </div>
 
@@ -57,6 +57,7 @@ export default {
         date: this.date.date
       }
       this.$store.dispatch('createTask',task)
+      this.$router.push('/list')
          },
     unmounted() {
       if (this.date && this.date.unmounted) {
@@ -69,3 +70,9 @@ export default {
   }
 }
 </script>
+<style>
+.head {
+  color: teal;
+}
+</style>
+
