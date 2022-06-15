@@ -15,7 +15,7 @@
     <button v-if="filter" class="btn-small red" @click="filter=null">Clear filter</button>
     <hr>
 
-    <table v-if="tasks?.length">
+    <table v-if="tasks.length">
 
      <thead>
      <tr>
